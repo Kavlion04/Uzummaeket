@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzum Market</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="top-nav">
+        <div class="container">
+            <div class="top-nav-left">
+                <a href="#" class="city-select">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Toshkent
+                </a>
+                <span class="delivery-info">Topshirish punktlari</span>
+            </div>
+            <div class="top-nav-right">
+                <span>Buyurtmangizni 1 kunda bepul yetkazib beramiz!</span>
+                <div class="top-links">
+                    <a href="#">Savol-javoblar</a>
+                    <a href="#">Buyurtmalarim</a>
+                    <a href="#" class="lang-select">O'zbekcha</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/div.middle-header-main-logo.svg" alt="Uzum Market">
+            </div>
+            <button class="catalog-btn">
+                <i class="fas fa-bars"></i>
+                Katalog
+            </button>
+            <div class="search-bar">
+                <input type="text" placeholder="Mahsulot va turkumlar izlash">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="nav-action">
+                    <i class="far fa-user"></i>
+                    <span>Kirish</span>
+                </a>
+                <a href="#" class="nav-action">
+                    <i class="far fa-heart"></i>
+                    <span>Saralangan</span>
+                </a>
+                <a href="#" class="nav-action">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Savatcha</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="categories-menu">
+        <div class="container">
+            <ul>
+                <li><a href="#">Elektronika</a></li>
+                <li><a href="#">Maishiy texnika</a></li>
+                <li><a href="#">Kiyim</a></li>
+                <li><a href="#">Poyabzallar</a></li>
+                <li><a href="#">Aksessuarlar</a></li>
+                <li><a href="#">Go'zallik</a></li>
+                <li><a href="#">Salomatlik</a></li>
+                <li><a href="#">Uy-ro'zg'or buyumlari</a></li>
+                <li><a href="#">Qurilish va ta'mirlash</a></li>
+                <li><a href="#">Yana</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-slider">
+                <div class="slide active">
+                    <div class="slide-content">
+                        <h1>Arzon narxlar har kuni</h1>
+                        <div class="promo-tag">
+                            Sirli to'plam
+                            <span class="emoji">🎉</span>
+                        </div>
+                        <p>30 yanvar gacha</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <h1>Yangi chegirmalar</h1>
+                        <div class="promo-tag">
+                            Maxsus takliflar
+                            <span class="emoji">💫</span>
+                        </div>
+                        <p>Bugun uchun</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <h1>Tezkor yetkazib berish</h1>
+                        <div class="promo-tag">
+                            1 kunda yetkazib berish
+                            <span class="emoji">🚚</span>
+                        </div>
+                        <p>Butun O'zbekiston bo'ylab</p>
+                    </div>
+                </div>
+                <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Outlet Section -->
+    <div class="outlet-section">
+        <div class="container">
+            <h2 class="section-title">Outlet</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </div>
+    <button id="backToTop" title="Yuqoriga qaytish">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Biz haqimizda</h3>
+                    <ul>
+                        <li><a href="#">Topshirish punktlari</a></li>
+                        <li><a href="#">Vakansiyalar</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Foydalanuvchilarga</h3>
+                    <ul>
+                        <li><a href="#">Biz bilan bog'lanish</a></li>
+                        <li><a href="#">Savol-Javob</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Tadbirkorlarga</h3>
+                    <ul>
+                        <li><a href="#">Uzumda soting</a></li>
+                        <li><a href="#">Sotuvchi kabinetiga kirish</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Ilovani yuklab oling</h3>
+                    <div class="app-downloads">
+                        <a href="#" class="app-button">
+                            <img class="eee"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYS3-iVERVZ0TLRZgNYtvXKuwndjyXNMPm9w&s"
+                                alt="App Store">
+                            <img class="eee" src="./assets/b.app-link__text_margin (1).svg" alt="">
+                        </a>
+                        <a href="#" class="app-button">
+                            <img src="./assets//SVG.svg" alt="Google Play">
+                            <img class="eee" src="./assets/b.app-link__text_margin.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="social-media">
+                    <h3>Uzum ijtimoiy tarmoqlarda</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>«2024© XK MCHJ «UZUM MARKET» STIR 309376127 Barcha huquqlar himoyalangan»</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
