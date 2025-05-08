@@ -206,10 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }" class="product-image">
             <div class="product-info">
               <h3 class="product-title">${product.title}</h3>
-              <div class="product-price">
-                <span class="main-price">${discountPrice.toFixed(2)} $</span>
-                <span class="product-discount">${product.price} $</span>
-              </div>
+
               <div class="product-rating">
                 ${getStars(product.rating)}
                 <span class="rating-number">${product.rating}</span>
@@ -298,17 +295,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }" class="product-image">
                   <div class="product-info">
                       <h3 class="product-title">${product.title}</h3>
-                      <div class="product-price">
-                          <span class="main-price">${discountPrice.toFixed(
-                            2
-                          )} $</span>
-                          <span class="product-discount">${
-                            product.price
-                          } $</span>
-                      </div>
+                      
                       <div class="product-rating">
+                     <p style="color: #DB4444; font-size: 16px; margin-left: 6px;" class="product-price">$ ${Math.floor(
+                       product.price
+                     )} </p>
                           ${getStars(product.rating)}
-                          <span class="rating-number">${product.rating}</span>
+                          <p style="color: #62656a; font-size: 16px; margin-left: 6px;" class="product-price">(${Math.floor(
+                            Math.random() * 100
+                          )}) </p>
                       </div>
                   </div>
               </div>
@@ -563,3 +558,16 @@ function getStars(rating) {
     starsHtml += '<i class="far fa-star"></i>';
   return starsHtml;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const user = localStorage.getItem("user");
+  const userIcon = document.getElementById("userIcon");
+  const signInLink = document.getElementById("signInLink");
+  if (user && userIcon && signInLink) {
+    userIcon.style.display = "flex";
+    signInLink.style.display = "none";
+  } else if (userIcon && signInLink) {
+    userIcon.style.display = "none";
+    signInLink.style.display = "inline";
+  }
+});
