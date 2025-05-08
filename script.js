@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   async function fetchProducts() {
-    showSkeletonCards(productsPerPage); 
+    showSkeletonCards(productsPerPage);
     try {
       const response = await fetch("https://dummyjson.com/products?limit=200");
       const data = await response.json();
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
       renderCategoryFilters();
       setTimeout(() => {
         displayProducts();
-      }, 600); 
+      }, 600);
     } catch (error) {
       console.error("Error fetching products:", error);
     }
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function renderCategoryFilters() {
     const categoriesMenu = document.querySelector(".categories-menu ul");
     categoriesMenu.innerHTML = "";
-   
+
     const allBtn = document.createElement("li");
     allBtn.innerHTML = `<a href="#" data-category="all" class="category-filter active"><span style="color:#7000FF;font-weight:600">Barchasi</span></a>`;
     categoriesMenu.appendChild(allBtn);
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function displayProducts() {
-    showSkeletonCards(productsPerPage); 
+    showSkeletonCards(productsPerPage);
     setTimeout(() => {
       const productsGrid = document.getElementById("productsGrid");
       const startIndex = 0;
@@ -408,8 +408,6 @@ async function loadDetail() {
   });
 }
 
-
-
 function getIdFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return params.get("id");
@@ -431,34 +429,74 @@ async function loadDetail() {
   });
 
   document.getElementById("detail").innerHTML = `
-    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;">
-      <div style="position:relative;display:flex;align-items:center;">
-        <button class="carousel-btn left" style="position:absolute;left:-32px;top:50%;transform:translateY(-50%);background:#fff;border:none;border-radius:50%;width:36px;height:36px;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-size:18px;cursor:pointer;z-index:2;"><i class="fas fa-chevron-left"></i></button>
-        <img src="${product.images[0]}" class="detail-image" id="mainImage">
-        <button class="carousel-btn right" style="position:absolute;right:-32px;top:50%;transform:translateY(-50%);background:#fff;border:none;border-radius:50%;width:36px;height:36px;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-size:18px;cursor:pointer;z-index:2;"><i class="fas fa-chevron-right"></i></button>
-      </div>
-      <div class="detail-gallery" style="justify-content:center;">
+    <div style="display:flex;align-items:center;gap:16px;">
+    <div class="detail-gallery" style="display:flex;flex-direction:column;justify-content:center;">
         ${gallery}
       </div>
+      <div style="position:relative;display:flex;align-items:center;">
+        <button class="carousel-btn left" style="position:absolute;left:-32px;top:50%;transform:translateY(-50%);background:#fff;border:none;border-radius:50%;width:36px;height:36px;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-size:18px;cursor:pointer;z-index:2;opacity:0.01;"><i class="fas fa-chevron-left"></i></button>
+        <img src="${product.images[0]}" class="detail-image" id="mainImage">
+        <button class="carousel-btn right" style="position:absolute;right:-32px;top:50%;transform:translateY(-50%);background:#fff;border:none;border-radius:50%;width:36px;height:36px;box-shadow:0 2px 8px rgba(0,0,0,0.08);font-size:18px;cursor:pointer;z-index:2; opacity:0.01;"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      
     </div>
     <div class="detail-info">
         <div class="detail-title">${product.title}</div>
-        <div class="detail-desc">${product.description}</div>
-        <div class="detail-price">
-            ${discountPrice} $
-            <span class="detail-discount">${product.price} $</span>
-        </div>
         <div class="detail-rating">
             ${getStars(product.rating)}
-            <span style="color:#62656a;font-size:16px;margin-left:6px">${
-              product.rating
-            }</span>
+            (150 Reviews) | <span style="color:#62656a;font-size:16px;margin-left:6px">
+              In Stock
+            </span>
         </div>
-        <div style="margin-top:18px;">
-            <b>Brand:</b> ${product.brand}<br>
-            <b>Kategoriya:</b> ${product.category}<br>
-            <b>Stok:</b> ${product.stock} dona
+        <div class="detail-price">
+          $  ${discountPrice} 
         </div>
+        <div class="detail-desc">${product.description}</div>
+        <hr style="margin:16px 0;">
+        <div class="detail-colors">
+          <b>Colors:</b>
+          <div class="color-options">
+          </div>
+          <div class=" color-options-2">
+          </div>
+        </div>
+        <div class="detail-size">
+          <b>Size:</b>
+          <div class="size-options">
+            <div class="size-option">
+              <p>XS</p>
+            </div>
+            <div class="size-option">
+              <p>S</p>
+            </div>
+            <div class="size-option sss">
+              <p>M</p>
+            </div>  
+            <div class="size-option">
+              <p>L</p>
+            </div>
+            <div class="size-option">
+              <p>XL</p>
+            </div>
+          </div>
+        </div>
+        <div class="detail-btn-container">
+        <img src="./assets/Frame 926.svg" alt="" class="detail-img">
+        <button class="detail-btn">
+          Buy now
+        </button>
+        <button class="detail-btn-2">
+        <i class="far fa-heart"></i>
+        </button>
+
+
+        </div>
+        <img class="detail-img-2" src="./assets/Frame 911.svg" alt="" >
+
+
+        
+        
+       
     </div>
   `;
 
@@ -525,5 +563,3 @@ function getStars(rating) {
     starsHtml += '<i class="far fa-star"></i>';
   return starsHtml;
 }
-
-
